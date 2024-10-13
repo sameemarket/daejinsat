@@ -5,8 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,6 +20,14 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/testing', function(){
-    return 'Hello, World!';
-});
+Route::get('/wall-panel', function () {
+    return view('wall-panel');
+})->name('wall-panel');
+
+Route::get('/ceiling', function () {
+    return view('ceiling');
+})->name('ceiling');
+
+Route::get('/packing', function () {
+    return view('packing');
+})->name('packing');
