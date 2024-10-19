@@ -97,8 +97,20 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             @auth
+                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    {{ __('Home') }}
+                </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('wall-panel')" :active="request()->routeIs('wall-panel')">
+                    {{ __('Wall-Panel') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('ceiling')" :active="request()->routeIs('ceiling')">
+                    {{ __('Ceiling') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('packing')" :active="request()->routeIs('packing')">
+                    {{ __('Packing') }}
                 </x-responsive-nav-link>
             @else
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
